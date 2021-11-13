@@ -1,0 +1,31 @@
+
+parsePhotos is the fn
+
+
+invoke url
+  https://0lsubwlwa7.execute-api.us-west-2.amazonaws.com
+
+POST editor/photos
+
+can do jwt authorization
+  for access to api
+
+
+requests.post('https://0lsubwlwa7.execute-api.us-west-2.amazonaws.com/editor/photos', dict(url='https://photos.app.goo.gl/dthaH9Eb9iD7rUru6'), headers={'content-type': 'text/json'}).json()
+
+
+https://0lsubwlwa7.execute-api.us-west-2.amazonaws.com/editor/photos
+username?
+password?
+
+
+where did I leave off?
+  x trying to get square images
+  x mouseover overlay
+  x generating image preview urls
+
+
+
+haven't really looked at expanded page / modal
+
+

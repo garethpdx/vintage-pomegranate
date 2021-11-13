@@ -1,0 +1,64 @@
+.header { background-color: lightblue; }
+div.body { background-color: pink ; height: 650px; padding-left: 50px}
+.footer { height: 300px; background-color: lightblue}
+
+
+div.post {
+    background-color: salmon;
+    width: 370px;
+    height: 370px;
+    margin: 10px;
+    padding: 0px;
+    float:left;
+    position:relative;
+}
+
+div.header, div.body, div.footer {
+    margin: 0px;
+    padding: 0px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+div.header {padding-top: 50px; padding-bottom: 50px }
+
+
+div.editor{
+    width:65%;
+    float:left
+}
+
+div.post-list{
+    width:30%;
+    float:left
+}
+
+.form-row {
+    width: 100%;
+}
+.form-row label {
+    width: 70%; display: inline-block
+}
+
+.overlay {
+    display:none;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background:white;
+    width:100%;
+    height:100%;
+    opacity: .5;
+    z-index: 12;
+}
+
+.post.selected>.overlay {
+    display:block
+}
+
+.overlay h2, .overlay p {
+    text-align: center
+}
+
+.form-row > label {width: 200px}
+.form-row textarea, .form-row input, .form-row button { width: 200px }
