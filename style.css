@@ -1,7 +1,10 @@
 .header { background-color: lightblue; }
 div.body { background-color: pink ; height: 650px; padding-left: 50px}
-.footer { height: 300px; background-color: lightblue}
+.footer { height: 100px; background-color: lightblue}
 
+body.has-modal {
+    overflow: hidden
+}
 
 div.post {
     background-color: salmon;
