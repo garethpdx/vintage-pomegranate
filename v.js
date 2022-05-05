@@ -2,6 +2,13 @@
 // organize editing controls
 // deploy lambda fn
 // 
+/*
+
+Editor UI
+
+
+*/
+
 
 const Posts = {
     data() {
@@ -16,11 +23,10 @@ const Posts = {
 	    this.posts = posts;
 	}
 	jQuery.getJSON('/posts.js', updatePosts.bind(this));
-	// jQuery.getJSON('http://blog.baselin.es/posts.js', updatePosts.bind(this));
     },
     methods: {
 	addpost(post){
-	    // does post have an iD? if so, do an update instead
+	    // does post have an ID? if so, do an update instead
 	    if(post.id){
 		for(let i=0; i<this.posts.length; i++){
 		    if(this.posts[i].id == post.id){
@@ -29,14 +35,17 @@ const Posts = {
 		}
 		return
 	    }
-	    // if not, generate an ID
-	    this.posts.push(post)
+	    // if not, generate one
+	    this.posts.push(post);
 	},
 	select(post){
+	    // clicked the list-item
 	    this.selected = post;
+	    $('body').toggleClass('has-modal');
 	},
 	clearSelected(){
 	    this.selected = {post: null }
+	    $('body').toggleClass('has-modal');
 	},
 	who(){
 	    console.log('root');
@@ -56,6 +65,7 @@ const Posts = {
 };
 
 function savePosts(posts, callback){
+    // lambda function that saves our posts
     url = 'https://1tndulkxmc.execute-api.us-west-2.amazonaws.com/updatePosts';
     $.ajax({
 	url: url,
@@ -139,7 +149,7 @@ const editor = postApp.component('editor', {
 	    <div class="form-row">
 	      <label for='post-body'>Body</label>
 	      <textarea name="body" id="post-body" v-model="draft.body"></textarea>
-	    </div>f	    
+	    </div>
             <div class="form-row">
 	      <label for='post-body'>Submit Password</label>
 	      <input type="password" name="password">
@@ -217,7 +227,7 @@ postApp.component('imageloader', {
     template:
     `
 <div class="form-row">
-  <label>Google Photos Link: </label><input  type='text' name='url' v-model='url'> (New only)<br> 
+  <label>Google Photos Link: </label><input  type='text' name='url' v-model='url'> (New posts only)<br> 
 </div>
 <div class="form-row">
    <button @click.prevent="go">Load Images From Google</button>
