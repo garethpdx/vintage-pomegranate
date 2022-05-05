@@ -66,7 +66,7 @@ const Posts = {
 
 function savePosts(posts, callback){
     // lambda function that saves our posts
-    url = 'https://1tndulkxmc.execute-api.us-west-2.amazonaws.com/updatePosts';
+    url = 'https://[LAMBDA_BASE]/updatePosts';
     $.ajax({
 	url: url,
 	complete: callback,
@@ -238,7 +238,7 @@ postApp.component('imageloader', {
 
 function imagesFromGoogle(url, callback){
     $.ajax({
-	url: 'https://0lsubwlwa7.execute-api.us-west-2.amazonaws.com/editor/photos',
+	url: 'https://[LAMBDA_BASE]/editor/photos',
 	complete: callback,
 	method:'POST',
 	data: {url: url},
