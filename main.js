@@ -22,7 +22,7 @@ const Posts = {
 	updatePosts = function(posts){
 	    this.posts = posts;
 	}
-	jQuery.getJSON('/posts.js', updatePosts.bind(this));
+	jQuery.getJSON('/data.js', updatePosts.bind(this));
     },
     methods: {
 	addpost(post){
